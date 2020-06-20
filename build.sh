@@ -1,10 +1,12 @@
 #!/usr/bin/env sh
 root=$PWD
 
-cd $root
 ./gradlew compileJava
+
 fd -a -x cp '{}' cpp/ ";" JNI_CPP.h build/generated/sources/headers/
-cd cpp && rm -rf bin && mkdir -p bin && cd bin && cmake -DCMAKE_BUILD_TYPE=MinSizeRel .. && make
+cd $root/cpp && rm -rf bin && mkdir -p bin && cd bin && cmake -DCMAKE_BUILD_TYPE=Release .. && make
+
+cd $root/rust && cargo build --release && mkdir -p bin && cp target/release/libjni_rust.so bin/libjni_rust.so
 
 cd $root/javacpp
 rm -rf bin

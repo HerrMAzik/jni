@@ -23,6 +23,14 @@ JNIEXPORT void JNICALL Java_com_man_JNI_1CPP_printText
 JNIEXPORT jint JNICALL Java_com_man_JNI_1CPP_mul
   (JNIEnv *, jobject, jint, jint);
 
+/*
+ * Class:     com_man_JNI_CPP
+ * Method:    div
+ * Signature: (II)I
+ */
+JNIEXPORT jint JNICALL Java_com_man_JNI_1CPP_div
+  (JNIEnv *, jclass, jint, jint);
+
 #ifdef __cplusplus
 }
 #endif
