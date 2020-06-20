@@ -12,6 +12,8 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+    implementation("net.java.dev.jna:jna:5.5.0")
+    implementation("org.bytedeco:javacpp:1.5.3")
 }
 
 configure<JavaPluginConvention> {
